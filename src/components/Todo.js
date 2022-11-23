@@ -9,8 +9,8 @@ const ButtonStyled = styled(Button)`
   &,
   &:hover {
     ${(p) =>
-        p.isCompleted &&
-        css`
+    p.isCompleted &&
+    css`
         text-decoration: line-through;
       `}
   }
@@ -29,19 +29,19 @@ const ButtonStyled = styled(Button)`
 `;
 
 export default function Todo({ todo, onCheckBtnClick }) {
-    return (
-        <ButtonStyled
-            isCompleted={todo.isCompleted}
-            shouldFitContainer
-            iconAfter={
-                !todo.isCompleted && ( //khi isCompleted == false => hien ra checkicon
-                    <span className='check-icon' onClick={() => onCheckBtnClick(todo.id)}>
-                        <CheckIcon primaryColor="green" />
-                    </span>
-                )
-            }
-        >
-            {todo.name}
-        </ButtonStyled>
-    );
+  return (
+    <ButtonStyled
+      isCompleted={todo.isCompleted}
+      shouldFitContainer
+      iconAfter={
+        !todo.iscompleted && ( //khi isCompleted == false => hien ra checkicon
+          <span className='check-icon' onClick={() => onCheckBtnClick(todo.id)}>
+            <CheckIcon primaryColor="green" />
+          </span>
+        )
+      }
+    >
+      {todo.name}
+    </ButtonStyled>
+  );
 }

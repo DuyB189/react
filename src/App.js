@@ -49,9 +49,17 @@ function App() {
       )
     );
   }, []);
-
+  const onDelBtnData = useCallback((e) => {
+    localStorage.removeItem(TODO_APP_STORAGE_KEY);
+  }, []);
   return (
     <>
+      <Button
+        classID='del-btn'
+        onClick={onDelBtnData}
+      >
+        x
+      </Button>
       <h3>Danh sách việc cần làm !!!</h3>
       <Textfield
         name='add-todo'
